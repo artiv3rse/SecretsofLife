@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌏Click💥💥 to Discover the Secrets to 🌈Happiness🌈⚡️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .prank {
+            font-size: 1.5rem;
+            color: #f00;
+        }
+
+        .universe-button {
+            margin-top: 1rem;
+        }
+
+        .psychedelic {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .final-message {
+            font-size: 2rem;
+            color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="start">
+            <button>🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌺CLICK FOR THE SECRET TO HAPPINESS🌺🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌝🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺🌺</button>
+        </div>
+        <div class="message hidden"></div>
+        <div class="prank hidden">
+            <p>🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨STUPID FUCK, YOU'LL NEVER BE HAPPY ☠️💩🚨
+              DO NOT CLICK THE BUTTON BELOW🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨</p>
+            <div class="universe-button">
+                <button id="universeButton">🪐Click here to unlock the secrets of the universe🪐</button>
+            </div>
+        </div>
+    </div>
+    <div class="psychedelic"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const start = document.querySelector('.start');
+            const message = document.querySelector('.message');
+            const prank = document.querySelector('.prank');
+            const container = document.querySelector('.container');
+            const psychedelic = document.querySelector('.psychedelic');
+            const universeButton = document.getElementById('universeButton');
+            let isPrankRunning = false;
+            let prankInterval;
+
+            const secrets = [
+                "☠️ANAL💫",
+                "🔥ARSON🔥",
+                "ZOLOFT💊",
+                "🍆HARRY BOLZ🍆",
+                "😵‍💫SCHIZOPHRENIA😵‍💫",
+            ];
+
+            function displayRandomSecret() {
+                const randomIndex = Math.floor(Math.random() * secrets.length);
+                message.textContent = secrets[randomIndex];
+            }
+
+            function revealPrank() {
+                clearInterval(prankInterval);
+                message.classList.add('hidden');
+                prank.classList.remove('hidden');
+                isPrankRunning = false;
+                psychedelic.style.opacity = '0';
+            }
+
+            function animatePsychedelic() {
+                const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+                psychedelic.style.backgroundColor = randomColor;
+            }
+
+            function animatePrank() {
+                displayRandomSecret();
+                animatePsychedelic();
+                const randomX = Math.random() * 20 - 10;
+                const randomY = Math.random() * 20 - 10;
+                const randomScale = 1 + Math.random() * 0.1;
+                container.style.transform = `translate(${randomX}px, ${randomY}px) scale(${randomScale})`;
+            }
+
+            start.addEventListener('click', function() {
+                if (!isPrankRunning) {
+                    isPrankRunning = true;
+                    start.classList.add('hidden');
+                    message.classList.remove('hidden');
+                    psychedelic.style.opacity = '0.5';
+                    prankInterval = setInterval(animatePrank, 50);
+                    setTimeout(revealPrank, 5000);
+                }
+            });
+
+            universeButton.addEventListener('click', () => {
+                container.innerHTML = '<div class="final-message">🚨⚠️ALERT, YOU ARE PROHIBITED⚠️🚨</div>';
+                let count = 5;
+
+                function create42() {
+                    const span = document.createElement('span');
+                    span.textContent = '42';
+                    span.style.position = 'absolute';
+                    span.style.left = `${Math.random() * 100}vw`;
+                    span.style.top = `${Math.random() * 100}vh`;
+                    span.style.fontSize = `${Math.random() * 3 + 1}rem`;
+                    span.style.color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+                    document.body.appendChild(span);
+                }
+
+                function animate42() {
+                    for (let i = 0; i < count; i++) {
+                        create42();
+                    }
+                    count *= 4;
+                    if (count <= 1024) {
+                        setTimeout(animate42, 1000);
+                    } else {
+                        const finalMessage = document.querySelector('.final-message');
+                        finalMessage.classList.remove('hidden');
+                    }
+                }
+
+                setTimeout(animate42, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
